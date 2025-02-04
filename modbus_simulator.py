@@ -1,4 +1,3 @@
-# socat -d -d pty,raw,echo=0 pty,raw,echo=0
 import logging
 from pymodbus.server import StartSerialServer
 from pymodbus.datastore import (
@@ -103,7 +102,8 @@ class ModbusRTUSimulator:
                 self.write_float(
                     slave_context, sfp["temperature"]["address"], temperature
                 )
-        log.info("=== Completed SFP update ===")
+                
+        log.info(f"=== Completed SFP update at {time.strftime('%Y-%m-%d %H:%M:%S')} === ")
 
     def init_product_info(self, context, product_info):
         # Write sample product and serial numbers
