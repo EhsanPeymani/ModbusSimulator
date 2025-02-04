@@ -1,0 +1,61 @@
+modbus_devices:
+  - device_id: 1
+    description: "3ch board 1"
+    com_port: "/dev/pts/33"
+    baudrate: 115200
+    registers:
+      sfps:
+        - sfp: 1
+          rx_power:
+            address: 1000
+            datatype: float32
+          tx_power:
+            address: 1002
+            datatype: float32
+          temperature:
+            address: 1004
+            datatype: float32
+        - sfp: 2
+          rx_power:
+            address: 2000
+            datatype: float32
+          tx_power:
+            address: 2002
+            datatype: float32
+          temperature:
+            address: 2004
+            datatype: float32
+        - sfp: 3
+          rx_power:
+            address: 3000
+            datatype: float32
+          tx_power:
+            address: 3002
+            datatype: float32
+          temperature:
+            address: 3004
+            datatype: float32
+        - sfp: 4
+          rx_power:
+            address: 4000
+            datatype: float32
+          tx_power:
+            address: 4002
+            datatype: float32
+          temperature:
+            address: 4004
+            datatype: float32
+  - device_id: 2
+    description: "Front Panel MCU to talk to EEPROM"
+    com_port: "/dev/pts/33"
+    baudrate: 115200
+    registers:
+      product_info:
+        product_number:
+          address: 100
+          datatype: string
+          length: 20
+        serial_number:
+          address: 110
+          datatype: string
+          length: 20
