@@ -20,7 +20,7 @@ class ModbusRTUClient:
 
         # Create client
         self.client = ModbusSerialClient(
-            port="/dev/pts/38",  # Use the other end of the virtual serial port
+            port="/dev/pts/8",  # Use the other end of the virtual serial port
             baudrate=115200,
             parity="N",
             stopbits=1,
