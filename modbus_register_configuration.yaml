@@ -1,7 +1,7 @@
 modbus_devices:
   - device_id: 1
     description: "3ch board 1"
-    com_port: "/dev/pts/38"
+    com_port: "/dev/pts/40"
     baudrate: 115200
     registers:
       sfps:
@@ -47,7 +47,7 @@ modbus_devices:
             datatype: float32
   - device_id: 2
     description: "Front Panel MCU to talk to EEPROM"
-    com_port: "/dev/pts/38"
+    com_port: "/dev/pts/40"
     baudrate: 115200
     registers:
       product_info:
