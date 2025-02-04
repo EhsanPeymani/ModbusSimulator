@@ -4,7 +4,6 @@ from pymodbus.payload import BinaryPayloadDecoder
 from pymodbus.constants import Endian
 import yaml
 import time
-from utilities import ModbusDecoder
 
 
 # Configure logging
@@ -21,7 +20,7 @@ class ModbusRTUClient:
 
         # Create client
         self.client = ModbusSerialClient(
-            port="/dev/pts/33",  # Use the other end of the virtual serial port
+            port="/dev/pts/38",  # Use the other end of the virtual serial port
             baudrate=115200,
             parity="N",
             stopbits=1,
@@ -58,7 +57,6 @@ class ModbusRTUClient:
 
     def read_all_values(self):
         """Read all configured values from the devices"""
-        decoder = ModbusDecoder()
         for device in self.config["modbus_devices"]:
             device_id = device["device_id"]
             print(f"\nReading from Device {device_id} ({device['description']})")
@@ -118,5 +116,5 @@ class ModbusRTUClient:
 
 if __name__ == "__main__":
     # Create and start client
-    client = ModbusRTUClient("resources/modbus_register_configuration.yaml")
+    client = ModbusRTUClient("modbus_register_configuration.yaml")
     client.run()

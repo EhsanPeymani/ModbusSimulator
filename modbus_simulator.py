@@ -218,14 +218,14 @@ class ModbusRTUSimulator:
             StartSerialServer(
                 context=self.context,
                 identity=identity,
-                port="/dev/pts/34",
+                port="/dev/pts/39",
                 baudrate=device["baudrate"],
             )
 
 
 if __name__ == "__main__":
     # Create and start simulator
-    simulator = ModbusRTUSimulator("resources/modbus_register_configuration.yaml")
+    simulator = ModbusRTUSimulator("modbus_register_configuration.yaml")
 
     try:
         print("Starting Modbus RTU simulator...")
