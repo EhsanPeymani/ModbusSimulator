@@ -218,7 +218,7 @@ class ModbusRTUSimulator:
             StartSerialServer(
                 context=self.context,
                 identity=identity,
-                port="/dev/pts/13",
+                port="/dev/pts/8",
                 baudrate=device["baudrate"],
             )
 
