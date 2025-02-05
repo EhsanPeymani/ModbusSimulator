@@ -92,8 +92,8 @@ class ModbusRTUSimulator:
                 base = sfp_base_values[sfp_num]
 
                 # Add random variations
-                tx_power = base["tx"] + random.uniform(-0.05, 0.05) * 0
-                rx_power = base["rx"] + random.uniform(-0.01, 0.01) * 0
+                tx_power = base["tx"] + random.uniform(-0.05, 0.05)
+                rx_power = base["rx"] + random.uniform(-0.01, 0.01)
                 temperature = 25.0 + random.uniform(-1, 1)
 
                 # Write values to registers
