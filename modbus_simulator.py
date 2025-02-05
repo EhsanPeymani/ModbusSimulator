@@ -80,10 +80,10 @@ class ModbusRTUSimulator:
     def update_sfp_values(self, slave_context, sfps):
         """Update SFP values with specified variations"""
         sfp_base_values = {
-            1: {"tx": 3.0, "rx": 0.08},
-            2: {"tx": 3.0, "rx": 0.08},
-            3: {"tx": 3.0, "rx": 0.08},
-            4: {"tx": 3.0, "rx": 0.08},
+            1: {"tx": 3.0, "rx": 0.07},
+            2: {"tx": 3.0, "rx": 0.07},
+            3: {"tx": 3.0, "rx": 0.07},
+            4: {"tx": 3.0, "rx": 0.07},
         }
 
         for sfp in sfps:
@@ -93,7 +93,7 @@ class ModbusRTUSimulator:
 
                 # Add random variations
                 tx_power = base["tx"] + random.uniform(-0.05, 0.05)
-                rx_power = base["rx"] + random.uniform(-0.01, 0.01)
+                rx_power = base["rx"] + random.uniform(-0.03, 0.03)
                 temperature = 25.0 + random.uniform(-1, 1)
 
                 # Write values to registers
